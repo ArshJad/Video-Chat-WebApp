@@ -1,6 +1,9 @@
 # Video-Chat-WebApp
  Source code for Real Time Connection video chat web application.
 
+# Setup: 
+- run ```npm i && npm start``` for both client and server side to start the development server
+
  # Usage of Different node modules
 
  - Express -> For basic routing and binding application level middleware to an instance of app object.
