@@ -37,7 +37,7 @@ const App = () => {
             </AppBar>
         <VideoPlayer />
         <Options>
-            <Notifications />
+          <Notifications />
         </Options>
         </div>
 

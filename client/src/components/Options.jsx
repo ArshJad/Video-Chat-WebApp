@@ -34,10 +34,10 @@ const useStyles = makeStyles((theme) => ({
   paper: {
     padding: '10px 20px',
     border: '2px solid black',
-    backgroundColor: 'transparent',
   },
 }))
 
+//
 const Options = ({ children }) => {
   const { me, callAccepted, name, setName, callEnded, leaveCall, callUser } = useContext(SocketContext)
   const [idToCall, setIdToCall] = useState('')

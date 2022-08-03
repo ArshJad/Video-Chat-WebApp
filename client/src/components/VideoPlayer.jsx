@@ -5,6 +5,7 @@ import {makeStyles} from '@material-ui/core/styles'
 import {SocketContext} from '../SocketContext'
 import { useContext } from 'react'
 
+//makeStyles from material ui to render CSS using javascript
 const useStyles = makeStyles((theme) => ({
     video: {
         width: '550px',
@@ -24,6 +25,7 @@ const useStyles = makeStyles((theme) => ({
       },
 }))
 
+//Videoplayer function is implemented using data from SocketContext and UI from useStyles function 
 const VideoPlayer = () => {
   const {name, callAccepted, callEnded, myVideo, userVideo, stream, call} = useContext(SocketContext);
     const classes = useStyles()
@@ -40,15 +42,14 @@ const VideoPlayer = () => {
               </Paper>
             )}
             {/* User Video */}
-            {
-              callAccepted && !callEnded && (
-                <Paper className={classes.paper}>
-                  <Grid item xs={12} md={6}>
-                    <Typography varaint='h5' gutterBottom>{call.name || 'Name'}</Typography>
-                    <video playsInline muted ref={null} autoplay className={classes.video} />
-                  </Grid>
-                </Paper>
-            )}  
+            {callAccepted && !callEnded && (
+            <Paper className={classes.paper}>
+              <Grid item xs={12} md={6}>
+                <Typography variant="h5" gutterBottom>{call.name || 'Name'}</Typography>
+                <video playsInline ref={userVideo} autoPlay className={classes.video} />
+              </Grid>
+            </Paper>
+      )} 
         </Grid>
     )
 }
